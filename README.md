@@ -85,7 +85,7 @@ Para desplegar la aplicación en línea, puedes utilizar servicios como GitHub P
 
 ## Enlace al Proyecto
 
-Puedes ver la aplicación en línea [aquí](URL_DEL_REPOSITORIO_O_SERVICIO_DE_DESPLIEGUE).
+Puedes ver la aplicación en línea [aquí](https://resonant-fenglisu-218fa6.netlify.app/).
 
 ## Contribuciones
 
