@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# SentimentAnalyzerPWA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SentimentAnalyzerPWA es una aplicación web progresiva (PWA) desarrollada con React que utiliza la API de Hugging Face para realizar análisis de sentimientos de texto. La aplicación permite a los usuarios ingresar texto, analizar el sentimiento y mostrar el resultado de manera clara y atractiva. También incluye notificaciones push motivacionales para sentimientos negativos.
 
-## Available Scripts
+## Características
 
-In the project directory, you can run:
+- **Análisis de Sentimientos:** Utiliza el modelo `distilbert-base-uncased-finetuned-sst-2-english` de la API de Hugging Face para determinar el sentimiento del texto ingresado.
+- **Notificaciones Push:** Envía una notificación motivacional si el sentimiento es negativo.
+- **Interfaz Moderna:** Diseño responsive y atractivo con una experiencia de usuario optimizada para dispositivos móviles.
+- **PWA:** Soporte para instalación en dispositivos móviles y funcionalidad offline.
 
-### `npm start`
+## Tecnologías Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React:** Biblioteca para construir la interfaz de usuario.
+- **Tailwind CSS:** Framework de diseño para estilos modernos y responsivos.
+- **API de Hugging Face:** Para el análisis de sentimientos.
+- **Service Workers:** Para soporte offline y notificaciones push.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Configuración
 
-### `npm test`
+### Requisitos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Node.js** (v14 o superior) y **npm** (Node Package Manager) instalados en tu sistema.
 
-### `npm run build`
+### Instalación
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clona el repositorio:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    git clone https://github.com/aracavic/SentimentAnalyzerPWA.git
+    cd TU_REPOSITORIO
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Instala las dependencias:**
 
-### `npm run eject`
+    ```bash
+    npm install
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Configura las variables de entorno:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    - Crea un archivo `.env` en la raíz del proyecto.
+    - Añade tu token de Hugging Face API al archivo `.env`:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```plaintext
+    REACT_APP_HUGGINGFACE_API_TOKEN=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
+    ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. **Inicia el servidor de desarrollo:**
 
-## Learn More
+    ```bash
+    npm start
+    ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    La aplicación estará disponible en `http://localhost:3000`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Despliegue
 
-### Code Splitting
+Para desplegar la aplicación en línea, puedes utilizar servicios como GitHub Pages, Vercel, o Netlify. A continuación, se explica cómo hacerlo con **Netlify**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **Instala la CLI de Netlify:**
 
-### Analyzing the Bundle Size
+    ```bash
+    npm install -g netlify-cli
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. **Inicia sesión en Netlify:**
 
-### Making a Progressive Web App
+    ```bash
+    netlify login
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+3. **Despliega la aplicación:**
 
-### Advanced Configuration
+    ```bash
+    netlify deploy
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    Sigue las instrucciones para conectar tu repositorio y desplegar la aplicación. El comando `netlify deploy` subirá la aplicación a Netlify y te proporcionará una URL temporal. Para una URL de producción, ejecuta `netlify deploy --prod`.
 
-### Deployment
+## Notas
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Permisos de Notificación:** La primera vez que se ejecute la aplicación, se solicitará permiso para mostrar notificaciones. Asegúrate de concederlo para ver las notificaciones push.
+- **Service Worker:** Asegúrate de que el archivo `service-worker.js` esté correctamente configurado y registrado para que las notificaciones y el soporte offline funcionen.
 
-### `npm run build` fails to minify
+## Enlace al Proyecto
+
+Puedes ver la aplicación en línea [aquí](URL_DEL_REPOSITORIO_O_SERVICIO_DE_DESPLIEGUE).
+
+## Contribuciones
+
+Las contribuciones son bienvenidas. Por favor, abre un issue o crea un pull request si deseas colaborar.
+
+## Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
